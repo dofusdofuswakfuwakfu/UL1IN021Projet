@@ -84,5 +84,3 @@ class Display:
         for x in range(WIDTH // 32):
             self.i2c.write_i2c_block_data(self.address, I2C_DATA, page[32*x:32*x+32])
 
-
-d = Display()
