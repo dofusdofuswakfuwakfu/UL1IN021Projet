@@ -35,12 +35,6 @@ class Display:
                 l[x] = 0
         self.push()
 
-        for y in range(12, 23):
-            l = self.modifie_ligne(y)
-            for x in range(WIDTH):
-                l[x] = 1
-        self.push()
-
     def modifie_ligne(self, lidx):
         """ Retourne la nième ligne du framebuffer. Vous DEVEZ 
         utiliser cette fonction, sinon push() sera incapable 
