@@ -57,6 +57,8 @@ class Vector:
         self.y = y
     def length(self):
         return ((self.x ** 2) + (self.y ** 2))**0.5
+    def normalised(self):
+        return Vector(self.x, self.y) / self.length()
     def as_tuple(self):
         """ Convertit notre vecteur en tuple ordinaire """
         return self.x, self.y
