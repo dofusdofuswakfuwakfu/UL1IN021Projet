@@ -17,6 +17,7 @@ GPIO.setup(BUZZER, GPIO.OUT)
 ecran           = Display()
 bouton          = GroveButton(BOUTON)
 joystick        = GroveJoystick(JOYSTICK)
+player          = Player()
 
 last_read       = (500, 500)
 
