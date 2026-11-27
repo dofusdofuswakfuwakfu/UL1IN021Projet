@@ -1,7 +1,8 @@
 .brown{
     color:rgb(240, 8, 8);
 }
-.petit{
+
+.petit, #criteres{
     font-size: 0.7em;
     line-height: 0.8em;
 }

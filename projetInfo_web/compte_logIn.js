@@ -1,26 +1,35 @@
-const pseudoUtilisateur = document.querySelector("#pseudo");
-const mdp1 = document.querySelector("#mdp1");
-const mdp2 = document.querySelector("#mdp2");
-
-function pseudo() {
-    if (!monNom) {
-      pseudo();
-    } else {
-      localStorage.setItem("nom", monNom);
-      pseudo.textContent = `${monNom}`
-      validitePseudo.textContent = `oui`;
-    }
-  }
-
-
 function validerCreation(){
-    if (!pseudoUtilisateur) {
-        console.log('Veuillez saisir un pseudo');
+  const message = document.querySelector("#message");
+  const pseudoUtilisateur = document.querySelector("#pseudo").value;
+  const mdp1 = document.querySelector("#mdp1").value;
+  const mdp2 = document.querySelector("#mdp2").value;
+  const regex = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+
+    if (pseudoUtilisateur.trim() === "") {
+      alert("Veuillez saisir un pseudo");
+        return;
     }
-    let regex = new RegExp^("^(?=.*\\w)(?=.*\\d)(?=.*{8.}).*$");
     if (!regex.test(mdp1)){
-        console.log('Mot de passe invalide')
+      alert('Mot de passe invalide')
+        document.getElementById("criteres").style.color = "red"
+        return;
     }
 
-
+    if (mdp1 !== mdp2) {
+      alert('Les mots de passe ne correspondent pas')
+      return;
+    }
+    
+    else {
+      fetch("/creation", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            pseudo: pseudoUtilisateur,
+            mdp1: mdp1,
+        })
+    })
+    }
 }
