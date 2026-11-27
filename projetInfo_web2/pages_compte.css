@@ -1,0 +1,23 @@
+.brown{
+    color:rgb(240, 8, 8);
+}
+.petit{
+    font-size: 0.7em;
+    line-height: 0.8em;
+}
+
+body{
+    background-color: rgb(239, 223, 255);
+}
+
+h1{
+    text-align: center;
+}
+h2{
+    margin-left: 4em;
+    text-align: left;
+}
+
+input{
+    background-color: rgb(217, 217, 255);
+}
